@@ -56,9 +56,8 @@ const datosEnLista = mostrarLista('LIEN')*/
 
 mostrarLista(['item1','item2'])
 mostrarLista([])*/
-
 //2
-;(function (lista){
+/*;(function (lista){
   if (lista.lenght == 0){
     console.log('lista vacia')
     return
@@ -67,3 +66,6 @@ mostrarLista([])*/
   return
 })
 
+*/
+
+console.log ('hello world')
