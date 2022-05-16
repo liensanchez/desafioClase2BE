@@ -1,41 +1,41 @@
       //construimos al usuario
       class Usuario{
-        // le definimos los atributos
-      constructor(nombre,apellido,autor,titulo,mascotas){
-        this.nombre = nombre
-        this.apellido = apellido
-        this.autor = autor
-        this.titulo = titulo
-        this.mascotas = mascotas
-        this.mascotasCantidad = 0
+          // le definimos los atributos
+        constructor(nombre,apellido,autor,titulo,mascotas){
+          this.nombre = nombre
+          this.apellido = apellido
+          this.autor = autor
+          this.titulo = titulo
+          this.mascotas = mascotas
+          this.mascotasCantidad = 0
+        }
+    
+          //retornamos el nombre y aprellido
+        getFullName(){
+          return `${this.nombre} ${this.apellido}`
+        }
+    
+          //agregamos un titulo y un autor
+        addBook(autor, titulo){
+          this.autor =  autor
+          this.titulo = titulo
+        }
+    
+          //retornamos el autor y el titulo del libro
+        getBookNames(){
+          return `${this.autor} ${this.titulo}`
+        }
+    
+          //agregamos las mascotas, usamos un spread operator para agregar cuantos animales querramos
+        addMascota(...params){
+          this.mascotas = params
+        }
+        
+          //hacemos un length de this.mascotas que devuelve un number del spead operator anterior
+        countMascotas(){
+          return this.mascotas.length
+        }
       }
-  
-        //retornamos el nombre y aprellido
-      getFullName(){
-        return `${this.nombre} ${this.apellido}`
-      }
-  
-        //agregamos un titulo y un autor
-      addBook(autor, titulo){
-        this.autor =  autor
-        this.titulo = titulo
-      }
-  
-        //retornamos el autor y el titulo del libro
-      getBookNames(){
-        return `${this.autor} ${this.titulo}`
-      }
-  
-        //agregamos las mascotas, usamos un spread operator para agregar cuantos animales querramos
-      addMascota(...params){
-        this.mascotas = params
-      }
-      
-        //hacemos un length de this.mascotas que devuelve un number del spead operator anterior
-      countMascotas(){
-        return this.mascotas.length
-      }
-    }
   
     const a = new Usuario('Juan Manuel', 'de Rosas',)
   
