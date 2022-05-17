@@ -56,3 +56,4 @@ const productos =[
 //ARRAY DE OBJETOS
 /* */
 
+ 
