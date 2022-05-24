@@ -56,4 +56,78 @@ const productos =[
 //ARRAY DE OBJETOS
 /* */
 
- 
+ //==============================MOMENT
+ /*
+  const moment = require ('moment')
+
+  const hoy = moment()
+
+  const nacimiento = moment('16/12/1999', 'DD/MM/YYYY')
+  
+  const anios = hoy.diff(nacimiento, 'years')
+
+  const dias = hoy.diff(nacimiento, 'days')
+
+  console.log(`pasaron ${dias} dias`)
+
+  console.log(`pasaron ${anios} años`)
+
+*/
+
+//==============================SERVIDORES WEB
+
+//asi se crea el serv web
+const http = require ('http')
+
+const moment = require ('moment')
+
+const hoy = moment().hour()
+//recibe 2 params peticion y respuesta q podemos nombrar como queremos
+const servidor = http.createServer((peticion, respuesta) =>{
+    //termina la peticion y envia datos al cliente    
+  const saludo = (hoy) => {
+    if (hoy >= 6 ) {
+      respuesta.end('Buenos dias')
+      console.log('buenos dias')
+    } else if ( hoy >= 17 ) {
+      respuesta.end('Buenas tardes')
+      console.log('buenos tardes')
+    } else{
+      respuesta.end('Buenas noches')
+      console.log('buenos noches')
+    } 
+  }
+  saludo()
+
+})
+
+//el puerto 8080 es generico luego es const nombre .listen, 
+const conexionServidor = servidor.listen(8080, () =>{
+
+  //se puede hardcodear el puerto 8080 pero se puede poner asi
+  console.log(`servidor Http escuchando en el puerto ${conexionServidor.address().port}`)
+})
+
+//=====================DESAFIO 
+
+/*const moment = require ('moment')
+
+const hoy = moment().format('h-m')
+//recibe 2 params peticion y respuesta q podemos nombrar como queremos
+const servidor = http.createServer((peticion, respuesta) =>{
+    //termina la peticion y envia datos al cliente    
+  const saludo = (hoy) => {
+    if (hoy => 6 ) {
+      respuesta.end('Buenos dias')
+    } else if ( hoy => 13 ) {
+      respuesta.end('Buenas tardes')
+    } else if (hoy => 20 ) {
+      respuesta.end('Buenas noches')
+    } 
+  }
+
+saludo()
+}) */
+
+
+
